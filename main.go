@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/venu-prasath/go-concurrency-patterns/pipelines"
+	ordonechannel "github.com/venu-prasath/go-concurrency-patterns/orDoneChannel"
 )
 
 
@@ -34,10 +34,13 @@ func main() {
 	//util.Generator()
 
 	//8. Reading fixed size values from a generator
-	pipelines.IntermediatePipeline()
+	//pipelines.IntermediatePipeline()
 
 	//9. Fan out Fan in pipeline
-	pipelines.FanOutPipeline()
+	//pipelines.FanOutPipeline()
+
+	//10. OrDoneChannel Pattern
+	ordonechannel.OrDoneChannelPattern()
 
 
 	fmt.Println("\nEnd of main...")
