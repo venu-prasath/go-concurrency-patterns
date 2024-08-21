@@ -24,6 +24,6 @@ This repository has code samples for the following different concurrency pattern
 
 To learn more about Go Concurrency Patterns, check out the following resources
 
-1. [Concurrency in Go - Amazon](https://www.amazon.com/Concurrency-Go-Tools-Techniques-Developers/dp/1491941197){:target="\_blank"}
+1. [Concurrency in Go - Amazon](https://www.amazon.com/Concurrency-Go-Tools-Techniques-Developers/dp/1491941197)
 
 2. [Kantan Coding](https://www.youtube.com/playlist?list=PL7g1jYj15RUNqJStuwE9SCmeOKpgxC0HP)
