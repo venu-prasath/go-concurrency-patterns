@@ -1,5 +1,11 @@
 package unbufferedChannels
 
+/* Channels are a typed, thead-safe queue. Channels allow different goroutines to
+ * communicate with each other. The <- operator is called the channel operator.
+ * Data flows in the direction of the arrow. This operation will block until another
+ * goroutine is ready to receive the value
+ */
+
 import "fmt"
 
 

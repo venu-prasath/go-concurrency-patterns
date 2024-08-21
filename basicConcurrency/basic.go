@@ -1,5 +1,12 @@
 package basicConcurrency
 
+/* The main idea behing goroutines is to run async task in a lightweight
+* thread in the background.
+* Go was designed to be concurrent. It excels at performing many tasks simultaneously
+* safely using a simple syntax.
+* Goroutines are light-weight. It's memory footprint is lighter that OS-level threads.
+ */
+
 import (
 	"fmt"
 	"time"
