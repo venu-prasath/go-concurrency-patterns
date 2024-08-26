@@ -2,9 +2,11 @@ package main
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/venu-prasath/go-concurrency-patterns/basicConcurrency"
 	bufferedchannels "github.com/venu-prasath/go-concurrency-patterns/bufferedChannels"
+	memoryusageofgoroutines "github.com/venu-prasath/go-concurrency-patterns/memoryUsageOfGoroutines"
 	ordonechannel "github.com/venu-prasath/go-concurrency-patterns/orDoneChannel"
 	"github.com/venu-prasath/go-concurrency-patterns/pipelines"
 	"github.com/venu-prasath/go-concurrency-patterns/unbufferedChannels"
@@ -12,41 +14,44 @@ import (
 )
 
 
-
-
 func main() {
-	fmt.Println("Starting main...")
+	if len(os.Args) < 2 {
+		fmt.Println("No args provided")
+		return
+	}
+	args := os.Args[1:]
+	fmt.Println("Starting main... with args: ", args[0])
 
-	//1. Basic concurrency Test
-	basicConcurrency.BasicConcurrency()
-
-	//2. Simple Unbuffered channel Test
-	unbufferedChannels.SimpleChannel()
-
-	//3. Select pattern for multiple channels
-	unbufferedChannels.Select()
-
-	//4. For Select pattern for multiple channels
-	bufferedchannels.ForSelect()
-
-	//5. Done Channel with For Select
-	bufferedchannels.DoneChannelPattern()
-
-	//6. Basic Pipeline
-	pipelines.PipelinePattern()
-
-	//7. Generator
-	util.Generator()
-
-	//8. Reading fixed size values from a generator
-	pipelines.IntermediatePipeline()
-
-	//9. Fan out Fan in pipeline
-	pipelines.FanOutPipeline()
-
-	//10. OrDoneChannel Pattern
-	ordonechannel.OrDoneChannelPattern()
-
-
+	switch args[0] {
+	case "basicConcurrency":
+		basicConcurrency.BasicConcurrency()
+	case "simpleConcurrency":
+		unbufferedChannels.SimpleChannel()
+	case "selectPattern":
+		unbufferedChannels.Select()
+	case "forSelect":
+		bufferedchannels.ForSelect()
+	case "doneChannel":
+		bufferedchannels.DoneChannelPattern()
+	case "pipeline":
+		pipelines.PipelinePattern()
+	case "generator":
+		util.Generator()
+	case "intermediatePipe":
+		pipelines.IntermediatePipeline()
+	case "fanInFanOut":
+		pipelines.FanOutPipeline()
+	case "orDone":
+		ordonechannel.OrDoneChannelPattern()
+	case "memoryUsage":
+		memoryusageofgoroutines.Measure()
+	case "mutex":
+		basicConcurrency.BasicMutex()
+	case "rwMutex":
+		basicConcurrency.RwMut()
+	default:
+		fmt.Println("Unknown argument")
+		return
+	}
 	fmt.Println("\nEnd of main...")
 }
