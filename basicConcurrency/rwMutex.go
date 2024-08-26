@@ -37,7 +37,7 @@ func RwMut() {
 		return time.Since(beginTestTime)
 	}
 
-	tw := tabwriter.NewWriter(os.Stdout, 0, 1, 2, ' ', 0)
+	tw := tabwriter.NewWriter(os.Stdout, 25, 1, 2, ' ', 0)
 	defer tw.Flush()
 
 	var m sync.RWMutex

@@ -49,6 +49,8 @@ func main() {
 		basicConcurrency.BasicMutex()
 	case "rwMutex":
 		basicConcurrency.RwMut()
+	case "condition":
+		basicConcurrency.ConditionCheck()
 	default:
 		fmt.Println("Unknown argument")
 		return
