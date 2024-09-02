@@ -51,6 +51,10 @@ func main() {
 		basicConcurrency.RwMut()
 	case "condition":
 		basicConcurrency.ConditionCheck()
+	case "cond_queue":
+		basicConcurrency.QueueCondition()
+	case "once":
+		basicConcurrency.TestOnce()
 	default:
 		fmt.Println("Unknown argument")
 		return
